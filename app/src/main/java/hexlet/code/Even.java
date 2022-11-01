@@ -9,7 +9,7 @@ public class Even {
 
 
         System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
+        System.out.print("May I have your name? ");
         String nameEven = scEven.nextLine();
         System.out.println("Hello, " + nameEven + "!");
 
