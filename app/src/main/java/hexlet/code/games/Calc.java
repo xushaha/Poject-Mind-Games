@@ -6,8 +6,6 @@ public class Calc {
     public static void gameCalc() {
         Scanner scCalc = new Scanner(System.in);
 
-
-
         int corrCountCalc = 0;
 
         while (corrCountCalc < 3) {
