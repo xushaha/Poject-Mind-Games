@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ public static final int RANDOMIZE_MULTIPLIER = 100;
         Scanner gameChoice = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter.");
+        System.out.println("4 - GCD");
         System.out.println("3 - Calc");
         System.out.println("2 - Even");
         System.out.println("1 - Greet");
@@ -34,6 +36,10 @@ public static final int RANDOMIZE_MULTIPLIER = 100;
             case 3 -> {
                 System.out.println("What is the result of the expression?");
                 Calc.gameCalc();
+            }
+            case 4 -> {
+                System.out.println("Find the greatest common divisor of given numbers.");
+                GCD.gameGCD();
             }
             default -> System.out.println("Try again");
         }
@@ -74,5 +80,20 @@ public static final int RANDOMIZE_MULTIPLIER = 100;
         Scanner scUserAnswerString = new Scanner(System.in);
         String userAnswerString = scUserAnswerString.nextLine().toLowerCase();
         return userAnswerString;
+    }
+
+
+    public static int findCGD(int randNumb1, int randNumb2) {
+
+
+        while ((randNumb1 != 0) && (randNumb2 != 0)) {
+
+            if (randNumb1 > randNumb2) {
+                randNumb1 = randNumb1 % randNumb2;
+            } else {
+                randNumb2 = randNumb2 % randNumb1;
+            }
+        }
+        return randNumb1 + randNumb2;
     }
 }

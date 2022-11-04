@@ -1,19 +1,17 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
-import java.util.Scanner;
 
 public class Calc {
     public static void gameCalc() {
-        Scanner scCalc = new Scanner(System.in);
 
         int corrCountCalc = 0;
 
         while (corrCountCalc < 3) {
             int randNumb1 = (int) (Math.random() * 100 + 1);
             int randNumb2 = (int) (Math.random() * 100 + 1);
-            String randOperator = new String();
+            String randOperator;
             int operatorSwitch = (int) (Math.random() * 2 + 1);
-            int correctAnswerCalc = 0;
+            int correctAnswerCalc;
 
             switch (operatorSwitch) {
                 case 0 -> {

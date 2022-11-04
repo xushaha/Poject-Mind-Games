@@ -1,5 +1,4 @@
 package hexlet.code.games;
-import java.util.Scanner;
 import hexlet.code.Engine;
 
 
@@ -9,16 +8,16 @@ public class Even {
 
         int correctCount = 0;
 
-        String posAnsw = "yes";
-        String negAnsw = "no";
+        String posAns = "yes";
+        String negAns = "no";
 
         while (correctCount < 3) {
             int randNumb = (int) (Math.random() * 100 + 1);
             System.out.println(randNumb);
             String evenUserAnswer = Engine.getUserAnswerString();
 
-            if ((randNumb % 2 == 0) && (evenUserAnswer.equals(posAnsw))
-                    || (randNumb % 2 != 0) && (evenUserAnswer.equals(negAnsw))) {
+            if ((randNumb % 2 == 0) && (evenUserAnswer.equals(posAns))
+                    || (randNumb % 2 != 0) && (evenUserAnswer.equals(negAns))) {
                 System.out.println("Correct!");
                 correctCount++;
                 if (correctCount == 3) {
