@@ -1,22 +1,16 @@
 package hexlet.code;
-import java.util.Arrays;
-
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
-
+import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class Engine {
 public static String userName;
-public static final int COUNT_OF_QUESTIONS = 3;
-public static final int RANDOMIZE_MULTIPLIER = 100;
+
 
     public static void gameChoice() {
         Scanner gameChoice = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter.");
+        System.out.println("6 - Prime number");
         System.out.println("5 - Progression");
         System.out.println("4 - GCD");
         System.out.println("3 - Calc");
@@ -47,6 +41,10 @@ public static final int RANDOMIZE_MULTIPLIER = 100;
             case 5 -> {
                 System.out.println("What number is missing in the progression?");
                 Progression.gameProgression();
+            }
+            case 6 -> {
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+                PrimeNumber.gamePrimeNumber();
             }
             default -> System.out.println("Try again");
         }
@@ -140,6 +138,22 @@ public static final int RANDOMIZE_MULTIPLIER = 100;
         }
 
         return progression[secretNumberPos];
+    }
+
+
+// Методы для игры Простое число
+    public static boolean isPrimeNumber(int questionPrimeNumber) {
+        boolean prime = false;
+
+        for (int i = 2; i < questionPrimeNumber; i++) {
+            if (questionPrimeNumber % i == 0) {
+                prime = false;
+                break;
+            } else {
+                prime = true;
+            }
+        }
+      return prime;
     }
 
 

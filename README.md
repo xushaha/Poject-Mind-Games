@@ -3,8 +3,8 @@ Fifth step of first project (game Even): https://asciinema.org/a/ZmWMb1fAwiYpuYH
 Sixth step of first project (game Calc): https://asciinema.org/a/r7d7ExlBm7HIpvbuvEeMj0Mlr
 Seventh step of first project (game GCD): https://asciinema.org/a/dpgsXl6q8mwbEYuvPRtyzysvq
 Eighth step of first project (game Progression): https://asciinema.org/a/FV39JccEspuAMK7sbB4nPPCII
-
-
+Ninth step of first project (game Prime Number):
+https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX
 
 
 
