@@ -1,8 +1,10 @@
 package hexlet.code;
+import java.util.Arrays;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -15,6 +17,7 @@ public static final int RANDOMIZE_MULTIPLIER = 100;
         Scanner gameChoice = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter.");
+        System.out.println("5 - Progression");
         System.out.println("4 - GCD");
         System.out.println("3 - Calc");
         System.out.println("2 - Even");
@@ -40,6 +43,10 @@ public static final int RANDOMIZE_MULTIPLIER = 100;
             case 4 -> {
                 System.out.println("Find the greatest common divisor of given numbers.");
                 GCD.gameGCD();
+            }
+            case 5 -> {
+                System.out.println("What number is missing in the progression?");
+                Progression.gameProgression();
             }
             default -> System.out.println("Try again");
         }
@@ -96,4 +103,46 @@ public static final int RANDOMIZE_MULTIPLIER = 100;
         }
         return randNumb1 + randNumb2;
     }
+
+
+
+// Методы для игры Прогрессия
+
+    public static void createProgression(int progLength, int progDiff, int secretNumberPos, int progressionStart) {
+
+        int[] progression = new int[progLength];
+        progression[0] = progressionStart;
+
+        for (int i = 1; i < progLength; i++) {
+            progression[i] = progression[i - 1] + progDiff;
+        }
+
+        System.out.print("Question: ");
+
+        for (int j = 0; j < progLength; j++) {
+            if (j == secretNumberPos) {
+                System.out.print(".. ");
+            } else if (j == progLength - 1) {
+                System.out.println(progression[j]);
+            } else {
+                System.out.print(progression[j] + " ");
+            }
+        }
+
+    }
+
+    public static int getCorrAnswerProgression(int progLength, int progDiff, int secretNumberPos, int progressionStart) {
+        int[] progression = new int[progLength];
+        progression[0] = progressionStart;
+
+        for (int i = 1; i < progLength; i++) {
+            progression[i] = progression[i - 1] + progDiff;
+        }
+
+        return progression[secretNumberPos];
+    }
+
+
+
 }
+
