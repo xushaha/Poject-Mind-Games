@@ -121,8 +121,11 @@ public class Engine {
 
     public static final int MAX_PROGR_LENGTH = 7;
     public static final int MIN_PROGR_LENGTH = 5;
+
     public static final int MAX_PROGR_DIFF = 12;
     public static final int MIN_PROGR_DIFF = 4;
+
+    public static final int SECRET_POS_KOEF = 1;
     public static final int MAX_PROGR_START = 8;
     public static final int MIN_PROGR_START = 5;
 
@@ -135,7 +138,7 @@ public class Engine {
     }
 
     public static int getSecretNumberPos() {
-        return (int) (Math.random() * getProgLength());
+        return (int) (Math.random() * getProgLength() - SECRET_POS_KOEF);
     }
 
     public static int getProgressionStart() {

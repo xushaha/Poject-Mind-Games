@@ -14,6 +14,9 @@ public class Progression {
             int secretNumberPos = Engine.getSecretNumberPos();
             int progressionStart = Engine.getProgressionStart();
 
+            System.out.println(progLength);
+            System.out.println(secretNumberPos);
+
             Engine.createProgression(progLength, progDiff, secretNumberPos, progressionStart);
             int progUserAnswer = Engine.getUserAnswerInt();
             System.out.println("Your answer: " + progUserAnswer);
