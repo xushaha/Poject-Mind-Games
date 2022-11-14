@@ -31,7 +31,7 @@ public class Calc {
                     correctAnswerCalc = 1;
                 }
             }
-            System.out.println("Question: " + randNumb1 + randOperator + randNumb2);
+            System.out.println("Question: " + randNumb1 + " " + randOperator + " " + randNumb2);
             int calcUserAnswer = Engine.getUserAnswerInt();
             System.out.println("Your answer: " + calcUserAnswer);
 
