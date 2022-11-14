@@ -77,6 +77,10 @@ public class Engine {
 
     }
 
+    public static int getRandomNumber() {
+        return (int) (Math.random() * MAX_RAND_NUMBER + MIN_RAND_NUMBER);
+    }
+
     public static void gameResultWin() {
         System.out.println("Congratulations, " + getUserName() + "!");
     }
@@ -115,6 +119,31 @@ public class Engine {
 
 
     // Методы для игры Прогрессия
+
+    public static final int MAX_PROGR_LENGTH = 7;
+    public static final int MIN_PROGR_LENGTH = 5;
+    public static final int MAX_PROGR_DIFF = 12;
+    public static final int MIN_PROGR_DIFF = 4;
+    public static final int MAX_PROGR_START = 8;
+    public static final int MIN_PROGR_START = 5;
+
+    public static int getProgLength() {
+        return (int) (Math.random() * MAX_PROGR_LENGTH + MIN_PROGR_LENGTH);
+    }
+
+    public static int getProgDiff() {
+        return (int) (Math.random() * MAX_PROGR_DIFF + MIN_PROGR_DIFF);
+    }
+
+    public static int getSecretNumberPos() {
+        return (int) (Math.random() * getProgLength());
+    }
+
+    public static int getProgressionStart() {
+        return (int) (Math.random() * MAX_PROGR_START + MIN_PROGR_START);
+    }
+
+
     public static void createProgression(int progLength, int progDiff, int secretNumberPos, int progressionStart) {
 
         int[] progression = new int[progLength];
@@ -150,9 +179,10 @@ public class Engine {
         return progression[secretNumberPos];
     }
 
+
+
+
     // Методы для игры Простое число
-
-
     public static final int MAX_PPIME_NUMBER = 98;
     public static final int MIN_PPIME_NUMBER = 2;
     public static int getNumberPrime() {
@@ -173,9 +203,7 @@ public class Engine {
         return prime;
     }
 
-    public static int getRandomNumber() {
-        return (int) (Math.random() * MAX_RAND_NUMBER + MIN_RAND_NUMBER);
-    }
+
 
 
 }

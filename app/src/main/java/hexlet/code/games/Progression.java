@@ -9,10 +9,10 @@ public class Progression {
 
         while (correctCount < Engine.MAX_CYCLES) {
 
-            int progLength = (int) (Math.random() * 7 + 5);
-            int progDiff = (int) (Math.random() * 12 + 4);
-            int secretNumberPos = (int) (Math.random() * progLength);
-            int progressionStart = (int) (Math.random() * 8 + 5);
+            int progLength = Engine.getProgLength();
+            int progDiff = Engine.getProgDiff();
+            int secretNumberPos = Engine.getSecretNumberPos();
+            int progressionStart = Engine.getProgressionStart();
 
             Engine.createProgression(progLength, progDiff, secretNumberPos, progressionStart);
             int progUserAnswer = Engine.getUserAnswerInt();
