@@ -4,10 +4,9 @@ import hexlet.code.Engine;
 public class Calc {
     public static void gameCalc() {
 
-        int corrCountCalc = 0;
-        int maxCycles = 3;
+        int correctCount = 0;
 
-        while (corrCountCalc < maxCycles) {
+        while (correctCount < Engine.MAX_CYCLES) {
             int randNumb1 = Engine.getRandomNumber();
             int randNumb2 = Engine.getRandomNumber();
             String randOperator;
@@ -40,9 +39,9 @@ public class Calc {
                     || ((operatorSwitch == 1) && (calcUserAnswer == randNumb1 - randNumb2))
                     || ((operatorSwitch == 2) && (calcUserAnswer == randNumb1 * randNumb2))) {
                 System.out.println("Correct!");
-                corrCountCalc++;
+                correctCount++;
 
-                if (corrCountCalc == 3) {
+                if (correctCount == 3) {
                     Engine.gameResultWin();
                 }
 
