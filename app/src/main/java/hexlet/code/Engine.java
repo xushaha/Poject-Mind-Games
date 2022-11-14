@@ -10,6 +10,9 @@ public class Engine {
 
     //  Методы для всех игр
     private static String userName;
+    public static final int MAX_CYCLES = 3;
+    public static final int MAX_RAND_NUMBER = 100;
+    public static final int MIN_RAND_NUMBER = 1;
 
     public static void gameChoice() {
         Scanner gameChoice = new Scanner(System.in);
@@ -163,9 +166,7 @@ public class Engine {
     }
 
     public static int getRandomNumber() {
-        int minNumber = 1;
-        int maxNumber = 100;
-        return (int) (Math.random() * maxNumber + minNumber);
+        return (int) (Math.random() * MAX_RAND_NUMBER + MIN_RAND_NUMBER);
     }
 
 
