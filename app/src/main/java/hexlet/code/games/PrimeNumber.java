@@ -9,7 +9,7 @@ public class PrimeNumber {
 
         while (correctCount < Engine.MAX_CYCLES) {
 
-            int questionPrimeNumber = (int) (Math.random() * 98 + 2);
+            int questionPrimeNumber = Engine.getNumberPrime();
             System.out.println("Question: " + questionPrimeNumber);
 
             String primeNumberUserAnswer = Engine.getUserAnswerString();

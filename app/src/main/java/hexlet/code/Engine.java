@@ -151,6 +151,14 @@ public class Engine {
     }
 
     // Методы для игры Простое число
+
+
+    public static final int MAX_PPIME_NUMBER = 98;
+    public static final int MIN_PPIME_NUMBER = 2;
+    public static int getNumberPrime() {
+        return (int) (Math.random() * MAX_PPIME_NUMBER + MIN_PPIME_NUMBER);
+    }
+
     public static boolean isPrimeNumber(int questionPrimeNumber) {
         boolean prime = false;
 
