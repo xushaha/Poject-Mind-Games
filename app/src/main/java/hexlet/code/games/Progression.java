@@ -6,8 +6,9 @@ public class Progression {
     public static void gameProgression() {
 
         int correctCount = 0;
+        int maxCycles = 3;
 
-        while (correctCount < 3) {
+        while (correctCount < maxCycles) {
 
             int progLength = (int) (Math.random() * 7 + 5);
             int progDiff = (int) (Math.random() * 12 + 4);

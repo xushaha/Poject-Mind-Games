@@ -6,8 +6,9 @@ public class GCD {
     public static void gameGCD() {
 
         int correctCount = 0;
+        int maxCycles = 3;
 
-        while (correctCount < 3) {
+        while (correctCount < maxCycles) {
             int randNumb1 = Engine.getRandomNumber();
             int randNumb2 = Engine.getRandomNumber();
             int gcd = Engine.findCGD(randNumb1, randNumb2);

@@ -7,11 +7,12 @@ public class Even {
     public static void gameEven() {
 
         int correctCount = 0;
+        int maxCycles = 3;
 
         String posAns = "yes";
         String negAns = "no";
 
-        while (correctCount < 3) {
+        while (correctCount < maxCycles) {
             int randNumb = Engine.getRandomNumber();
             System.out.println("Question: " + randNumb);
             String evenUserAnswer = Engine.getUserAnswerString();

@@ -163,9 +163,9 @@ public class Engine {
     }
 
     public static int getRandomNumber() {
-        int min = 1;
-        int max = 100;
-        return (int) (Math.random() * max + min);
+        int minNumber = 1;
+        int maxNumber = 100;
+        return (int) (Math.random() * maxNumber + minNumber);
     }
 
 

@@ -5,8 +5,9 @@ public class Calc {
     public static void gameCalc() {
 
         int corrCountCalc = 0;
+        int maxCycles = 3;
 
-        while (corrCountCalc < 3) {
+        while (corrCountCalc < maxCycles) {
             int randNumb1 = Engine.getRandomNumber();
             int randNumb2 = Engine.getRandomNumber();
             String randOperator;

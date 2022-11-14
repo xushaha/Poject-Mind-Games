@@ -6,8 +6,9 @@ public class PrimeNumber {
     public static void gamePrimeNumber() {
 
         int correctCount = 0;
+        int maxCycles = 3;
 
-        while (correctCount < 3) {
+        while (correctCount < maxCycles) {
 
             int questionPrimeNumber = (int) (Math.random() * 98 + 2);
             System.out.println("Question: " + questionPrimeNumber);
