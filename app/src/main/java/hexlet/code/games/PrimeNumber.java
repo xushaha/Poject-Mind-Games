@@ -21,7 +21,7 @@ public class PrimeNumber {
             if (primeNumberAnswer.equals(primeNumberUserAnswer)) {
                 System.out.println("Correct!");
                 correctCount++;
-                if (correctCount == 3) {
+                if (correctCount == Engine.MAX_CYCLES) {
                     Engine.gameResultWin();
                 }
             } else {
