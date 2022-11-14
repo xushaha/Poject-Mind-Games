@@ -29,38 +29,37 @@ public class Engine {
         int choice = gameChoice.nextInt();
         System.out.println("Your choice: " + choice);
 
-        switch (choice) {
-            case 0 -> System.out.println("Bye, see you soon!");
-            case 1 -> Cli.greeting();
-            case 2 -> {
-                Engine.userGreeting();
-                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-                Even.gameEven();
-            }
-            case 3 -> {
-                Engine.userGreeting();
-                System.out.println("What is the result of the expression?");
-                Calc.gameCalc();
-            }
-            case 4 -> {
-                Engine.userGreeting();
-                System.out.println("Find the greatest common divisor of given numbers.");
-                GCD.gameGCD();
-            }
-            case 5 -> {
-                Engine.userGreeting();
-                System.out.println("What number is missing in the progression?");
-                Progression.gameProgression();
-            }
-            case 6 -> {
-                Engine.userGreeting();
-                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-                PrimeNumber.gamePrimeNumber();
-            }
-            default -> System.out.println("Try again");
+        if (choice == 0) {
+            System.out.println("Bye, see you soon!");
+        } else if (choice == 1) {
+            Cli.greeting();
+        } else if (choice == 2) {
+            Engine.userGreeting();
+            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+            Even.gameEven();
+        } else if (choice == 3) {
+            Engine.userGreeting();
+            System.out.println("What is the result of the expression?");
+            Calc.gameCalc();
+        } else if (choice == 4) {
+            Engine.userGreeting();
+            System.out.println("Find the greatest common divisor of given numbers.");
+            GCD.gameGCD();
+        } else if (choice == 5) {
+            Engine.userGreeting();
+            System.out.println("What number is missing in the progression?");
+            Progression.gameProgression();
+        } else if (choice == 6) {
+            Engine.userGreeting();
+            System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+            PrimeNumber.gamePrimeNumber();
+        } else {
+            System.out.println("Try again");
         }
         gameChoice.close();
     }
+
+
 
     public static String getUserName() {
         return userName;
