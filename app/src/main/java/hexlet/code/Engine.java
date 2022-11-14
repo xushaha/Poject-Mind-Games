@@ -1,9 +1,13 @@
 package hexlet.code;
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.PrimeNumber;
+import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Engine {
-public static String userName;
+    public static String userName;
 
 
     public static void gameChoice() {
@@ -57,7 +61,7 @@ public static String userName;
     public static String getUserName() {
         return userName;
     }
-   public static void setUserName(String name) {
+    public static void setUserName(String name) {
         userName = name;
     }
 
@@ -157,7 +161,7 @@ public static String userName;
                 prime = true;
             }
         }
-      return prime;
+        return prime;
     }
 
 

@@ -26,7 +26,7 @@ public class GCD {
                 System.out.println("'" + gcdUserAnswer + "' is wrong answer ;(. Correct answer was '" + gcd + "'.");
                 Engine.gameResultLoss();
                 break;
-                }
             }
         }
     }
+}

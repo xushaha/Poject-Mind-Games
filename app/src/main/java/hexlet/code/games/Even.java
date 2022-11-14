@@ -32,7 +32,7 @@ public class Even {
                     System.out.println("'" + evenUserAnswer + "' is wrong answer ;(. Correct answer was 'no'.");
                     Engine.gameResultLoss();
                 }
-               break;
+                break;
             }
         }
     }

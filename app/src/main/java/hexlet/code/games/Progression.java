@@ -33,5 +33,5 @@ public class Progression {
                 break;
             }
         }
-  }
+    }
 }
