@@ -17,7 +17,8 @@ public class Progression {
             Engine.createProgression(progLength, progDiff, secretNumberPos, progressionStart);
             int progUserAnswer = Engine.getUserAnswerInt();
             System.out.println("Your answer: " + progUserAnswer);
-            int progCorrAnswer = Engine.getCorrAnswerProgression(progLength, progDiff, secretNumberPos, progressionStart);
+            int progCorrAnswer = Engine.getCorrAnswerProgression(progLength, progDiff, secretNumberPos,
+                    progressionStart);
 
             if (progUserAnswer == progCorrAnswer) {
                 System.out.println("Correct!");
@@ -26,7 +27,8 @@ public class Progression {
                     Engine.gameResultWin();
                 }
             } else {
-                System.out.println("'" + progUserAnswer + "' is wrong answer ;(. Correct answer was '" + progCorrAnswer + "'.");
+                System.out.println("'" + progUserAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + progCorrAnswer + "'.");
                 Engine.gameResultLoss();
                 break;
             }

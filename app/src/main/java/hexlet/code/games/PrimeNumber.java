@@ -25,7 +25,8 @@ public class PrimeNumber {
                     Engine.gameResultWin();
                 }
             } else {
-                System.out.println("'" + primeNumberUserAnswer + "' is wrong answer ;(. Correct answer was '" + primeNumberAnswer + "'.");
+                System.out.println("'" + primeNumberUserAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + primeNumberAnswer + "'.");
                 Engine.gameResultLoss();
                 break;
             }

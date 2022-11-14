@@ -21,28 +21,31 @@ public static String userName;
         int choice = gameChoice.nextInt();
         System.out.println("Your choice: " + choice);
 
-        Engine.userGreeting();
-
         switch (choice) {
             case 0 -> System.out.println("Bye, see you soon!");
             case 1 -> Cli.greeting();
             case 2 -> {
+                Engine.userGreeting();
                 System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
                 Even.gameEven();
             }
             case 3 -> {
+                Engine.userGreeting();
                 System.out.println("What is the result of the expression?");
                 Calc.gameCalc();
             }
             case 4 -> {
+                Engine.userGreeting();
                 System.out.println("Find the greatest common divisor of given numbers.");
                 GCD.gameGCD();
             }
             case 5 -> {
+                Engine.userGreeting();
                 System.out.println("What number is missing in the progression?");
                 Progression.gameProgression();
             }
             case 6 -> {
+                Engine.userGreeting();
                 System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                 PrimeNumber.gamePrimeNumber();
             }
@@ -129,7 +132,8 @@ public static String userName;
 
     }
 
-    public static int getCorrAnswerProgression(int progLength, int progDiff, int secretNumberPos, int progressionStart) {
+    public static int getCorrAnswerProgression(int progLength, int progDiff, int secretNumberPos,
+                                               int progressionStart) {
         int[] progression = new int[progLength];
         progression[0] = progressionStart;
 
