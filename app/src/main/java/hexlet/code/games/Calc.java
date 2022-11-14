@@ -7,8 +7,8 @@ public class Calc {
         int corrCountCalc = 0;
 
         while (corrCountCalc < 3) {
-            int randNumb1 = (int) (Math.random() * 100 + 1);
-            int randNumb2 = (int) (Math.random() * 100 + 1);
+            int randNumb1 = Engine.getRandomNumber();
+            int randNumb2 = Engine.getRandomNumber();
             String randOperator;
             int operatorSwitch = (int) (Math.random() * 2 + 1);
             int correctAnswerCalc;

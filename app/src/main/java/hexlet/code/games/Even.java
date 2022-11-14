@@ -12,7 +12,7 @@ public class Even {
         String negAns = "no";
 
         while (correctCount < 3) {
-            int randNumb = (int) (Math.random() * 100 + 1);
+            int randNumb = Engine.getRandomNumber();
             System.out.println("Question: " + randNumb);
             String evenUserAnswer = Engine.getUserAnswerString();
 

@@ -8,8 +8,8 @@ public class GCD {
         int correctCount = 0;
 
         while (correctCount < 3) {
-            int randNumb1 = (int) (Math.random() * 100 + 1);
-            int randNumb2 = (int) (Math.random() * 100 + 1);
+            int randNumb1 = Engine.getRandomNumber();
+            int randNumb2 = Engine.getRandomNumber();
             int gcd = Engine.findCGD(randNumb1, randNumb2);
 
             System.out.println("Question: " + randNumb1 + " " + randNumb2);

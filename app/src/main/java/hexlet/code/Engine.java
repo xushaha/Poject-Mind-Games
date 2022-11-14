@@ -7,8 +7,9 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Engine {
-    private static String userName;
 
+    //  Методы для всех игр
+    private static String userName;
 
     public static void gameChoice() {
         Scanner gameChoice = new Scanner(System.in);
@@ -64,7 +65,6 @@ public class Engine {
     public static void setUserName(String name) {
         userName = name;
     }
-
     public static void userGreeting() {
         Scanner scUserName = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
@@ -77,7 +77,6 @@ public class Engine {
     public static void gameResultWin() {
         System.out.println("Congratulations, " + getUserName() + "!");
     }
-
     public static void gameResultLoss() {
         System.out.println("Let's try again, " + getUserName() + "!");
     }
@@ -87,7 +86,6 @@ public class Engine {
         int userAnswerInt = scUserAnswerInt.nextInt();
         return userAnswerInt;
     }
-
     public static String getUserAnswerString() {
         Scanner scUserAnswerString = new Scanner(System.in);
         String userAnswerString = scUserAnswerString.nextLine().toLowerCase();
@@ -95,6 +93,8 @@ public class Engine {
     }
 
 
+
+    // Методы для игры GCD
     public static int findCGD(int randNumb1, int randNumb2) {
 
 
@@ -111,8 +111,7 @@ public class Engine {
 
 
 
-// Методы для игры Прогрессия
-
+    // Методы для игры Прогрессия
     public static void createProgression(int progLength, int progDiff, int secretNumberPos, int progressionStart) {
 
         int[] progression = new int[progLength];
@@ -148,8 +147,7 @@ public class Engine {
         return progression[secretNumberPos];
     }
 
-
-// Методы для игры Простое число
+    // Методы для игры Простое число
     public static boolean isPrimeNumber(int questionPrimeNumber) {
         boolean prime = false;
 
@@ -164,6 +162,11 @@ public class Engine {
         return prime;
     }
 
+    public static int getRandomNumber() {
+        int min = 1;
+        int max = 100;
+        return (int) (Math.random() * max + min);
+    }
 
 
 }
