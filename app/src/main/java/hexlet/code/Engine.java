@@ -14,53 +14,6 @@ public class Engine {
     public static final int MAX_RAND_NUMBER = 100;
     public static final int MIN_RAND_NUMBER = 1;
 
-    public static void gameChoice() {
-        Scanner gameChoice = new Scanner(System.in);
-
-        System.out.println("Please enter the game number and press Enter.");
-        System.out.println("6 - Prime number");
-        System.out.println("5 - Progression");
-        System.out.println("4 - GCD");
-        System.out.println("3 - Calc");
-        System.out.println("2 - Even");
-        System.out.println("1 - Greet");
-        System.out.println("0 - Exit");
-
-        String choice = gameChoice.nextLine();
-        System.out.println("Your choice: " + choice);
-
-        if (choice.equals("0")) {
-            System.out.println("Bye, see you soon!");
-        } else if (choice.equals("1")) {
-            Cli.greeting();
-        } else if (choice.equals("2")) {
-            Engine.userGreeting();
-            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-            Even.gameEven();
-        } else if (choice.equals("3")) {
-            Engine.userGreeting();
-            System.out.println("What is the result of the expression?");
-            Calc.gameCalc();
-        } else if (choice.equals("4")) {
-            Engine.userGreeting();
-            System.out.println("Find the greatest common divisor of given numbers.");
-            GCD.gameGCD();
-        } else if (choice.equals("5")) {
-            Engine.userGreeting();
-            System.out.println("What number is missing in the progression?");
-            Progression.gameProgression();
-        } else if (choice.equals("6")) {
-            Engine.userGreeting();
-            System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-            PrimeNumber.gamePrimeNumber();
-        } else {
-            System.out.println("Try again");
-        }
-        gameChoice.close();
-    }
-
-
-
     public static String getUserName() {
         return userName;
     }
