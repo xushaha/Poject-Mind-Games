@@ -1,20 +1,23 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.PrimeNumber;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
 public class Menu {
+        public static final int CHOICE_EXIT = 0;
+        public static final int CHOICE_GREETING = 1;
+        public static final int CHOICE_EVEN = 2;
+        public static final int CHOICE_CALC = 3;
+        public static final int CHOICE_GCD = 4;
+        public static final int CHOICE_PROGRESSION = 5;
+        public static final int CHOICE_PRIME_NUMBER = 6;
 
         public static void gameChoice() {
-
-                final int CHOICE_EXIT = 0;
-                final int CHOICE_GREETING = 1;
-                final int CHOICE_EVEN = 2;
-                final int CHOICE_CALC = 3;
-                final int CHOICE_GCD = 4;
-                final int CHOICE_PROGRESSION = 5;
-                final int CHOICE_PRIME_NUMBER = 6;
 
                 Scanner gameChoice = new Scanner(System.in);
                 int choice = gameChoice.nextInt();
