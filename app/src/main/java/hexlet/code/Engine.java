@@ -133,30 +133,24 @@ public class Engine {
 
 
     // Методы для игры Простое число
-    public static final int MAX_PPIME_NUMBER = 99;
-    public static final int MIN_PPIME_NUMBER = 1;
-    public static int getNumberPrime() {
-        return (int) (MIN_PPIME_NUMBER + Math.random() * MAX_PPIME_NUMBER);
-    }
 
     public static boolean isPrimeNumber(int questionPrimeNumber) {
         boolean prime = false;
 
-        for (int i = 2; i < questionPrimeNumber; i++) {
-            if (questionPrimeNumber % i == 0) {
-                prime = false;
-                break;
-            } else if (questionPrimeNumber == 2) {
-                prime = true;
-            } else {
-                prime = true;
+        if ((questionPrimeNumber == 1) || (questionPrimeNumber == 2)) {
+            prime = true;
+
+        } else {
+            for (int i = 2; i < questionPrimeNumber; i++) {
+                if (questionPrimeNumber % i == 0) {
+                    prime = false;
+                    break;
+                } else {
+                    prime = true;
+                }
             }
         }
         return prime;
     }
-
-
-
-
 }
 
