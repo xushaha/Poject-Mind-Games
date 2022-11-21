@@ -27,8 +27,8 @@ public class Engine {
 //получение ответа пользователя
     public static String getUserAnswer() {
         Scanner scUserAnswer = new Scanner(System.in);
-        String userAnswer = scUserAnswer.nextLine().toLowerCase();
-        return userAnswer;
+        return scUserAnswer.nextLine().toLowerCase();
+
     }
 
 
@@ -56,7 +56,7 @@ public class Engine {
 
     public static void checkAnswers(String[][] gameEngine) {
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < MAX_CYCLES; i++) {
             System.out.println("Question: " + gameEngine[i][0]);
             String userAnswer = Engine.getUserAnswer();
             System.out.println("Your answer: " + userAnswer);
@@ -65,11 +65,11 @@ public class Engine {
                 System.out.println("Correct!");
                 correctCount += 1;
             } else {
-                    System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                            + gameEngine[i][1] + "'.");
-                    Engine.gameResultLoss();
-                    break;
-                }
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                    + gameEngine[i][1] + "'.");
+                Engine.gameResultLoss();
+                break;
+            }
 
             if (correctCount == MAX_CYCLES) {
                 Engine.gameResultWin();
