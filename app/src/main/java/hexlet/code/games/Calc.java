@@ -2,55 +2,41 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calc {
-    public static void gameCalc() {
 
-        int correctCount = 0;
+    public static String[][] getQaArrayCalc() {
+        int firstMember1R = Engine.getRandomNumber();
+        int secondMember1R = Engine.getRandomNumber();
+        int firstMember2R = Engine.getRandomNumber();
+        int secondMember2R = Engine.getRandomNumber();
+        int firstMember3R = Engine.getRandomNumber();
+        int secondMember3R = Engine.getRandomNumber();
 
-        while (correctCount < Engine.MAX_CYCLES) {
-            int randNumb1 = Engine.getRandomNumber();
-            int randNumb2 = Engine.getRandomNumber();
-            String randOperator;
-            int operatorSwitch = (int) (Math.random() * 2 + 1);
-            int correctAnswerCalc;
+        String[] operator = {"+", "-", "*"};
+        String operator1 = operator[(int) (Math.random() * 2 + 1)];
+        String operator2 = operator[(int) (Math.random() * 2 + 1)];
+        String operator3 = operator[(int) (Math.random() * 2 + 1)];
 
-            switch (operatorSwitch) {
-                case 0 -> {
-                    randOperator = "+";
-                    correctAnswerCalc = randNumb1 + randNumb2;
-                }
-                case 1 -> {
-                    randOperator = "-";
-                    correctAnswerCalc = randNumb1 - randNumb2;
-                }
-                case 2 -> {
-                    randOperator = "*";
-                    correctAnswerCalc = randNumb1 * randNumb2;
-                }
-                default -> {
-                    randOperator = "";
-                    correctAnswerCalc = 1;
-                }
-            }
-            System.out.println("Question: " + randNumb1 + " " + randOperator + " " + randNumb2);
-            int calcUserAnswer = Engine.getUserAnswerInt();
-            System.out.println("Your answer: " + calcUserAnswer);
+        String questionCacl1 = firstMember1R + " " + operator1 + " " + secondMember1R;
+        String questionCacl2 = firstMember2R + " " + operator2 + " " + secondMember2R;
+        String questionCacl3 = firstMember3R + " " + operator3 + " " + secondMember3R;
 
-            if (((operatorSwitch == 0) && (calcUserAnswer == randNumb1 + randNumb2))
-                    || ((operatorSwitch == 1) && (calcUserAnswer == randNumb1 - randNumb2))
-                    || ((operatorSwitch == 2) && (calcUserAnswer == randNumb1 * randNumb2))) {
-                System.out.println("Correct!");
-                correctCount++;
+        String correctCalc1R = getCorrectAnswerCalc(firstMember1R, secondMember1R, operator1);
+        String correctCalc2R = getCorrectAnswerCalc(firstMember2R, secondMember2R, operator2);
+        String correctCalc3R = getCorrectAnswerCalc(firstMember3R, secondMember3R, operator3);
 
-                if (correctCount == Engine.MAX_CYCLES) {
-                    Engine.gameResultWin();
-                }
+        return new String[][] {{questionCacl1, correctCalc1R}, {questionCacl2, correctCalc2R},
+            {questionCacl3, correctCalc3R}};
+    }
 
-            } else {
-                System.out.println("'" + calcUserAnswer + "' is wrong answer ;(. Correct answer was '"
-                        + correctAnswerCalc + "'.");
-                Engine.gameResultLoss();
-                break;
-            }
+    public static String getCorrectAnswerCalc(int a, int b, String operators) {
+        int correctAnswerCalc;
+
+        switch (operators) {
+            case "+" -> correctAnswerCalc = a + b;
+            case "-" -> correctAnswerCalc = a - b;
+            case "*" -> correctAnswerCalc = a * b;
+            default -> correctAnswerCalc = 1;
         }
+        return Integer.toString(correctAnswerCalc);
     }
 }

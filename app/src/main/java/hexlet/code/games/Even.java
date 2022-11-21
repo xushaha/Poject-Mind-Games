@@ -3,37 +3,20 @@ import hexlet.code.Engine;
 
 
 public class Even {
+    public static String[][] getQaArrayEven() {
+        int randNumb1R = Engine.getRandomNumber();
+        int randNumb2R = Engine.getRandomNumber();
+        int randNumb3R = Engine.getRandomNumber();
 
-    public static void gameEven() {
+        String questionEven1R = Integer.toString(randNumb1R);
+        String questionEven2R = Integer.toString(randNumb2R);
+        String questionEven3R = Integer.toString(randNumb3R);
 
-        int correctCount = 0;
+        String correctEven1R = (randNumb1R % 2 == 0) ? "yes" : "no";
+        String correctEven2R = (randNumb2R % 2 == 0) ? "yes" : "no";
+        String correctEven3R = (randNumb3R % 2 == 0) ? "yes" : "no";
 
-        String posAns = "yes";
-        String negAns = "no";
-
-        while (correctCount < Engine.MAX_CYCLES) {
-            int randNumb = Engine.getRandomNumber();
-            System.out.println("Question: " + randNumb);
-            String evenUserAnswer = Engine.getUserAnswerString();
-
-            if ((randNumb % 2 == 0) && (evenUserAnswer.equals(posAns))
-                    || (randNumb % 2 != 0) && (evenUserAnswer.equals(negAns))) {
-                System.out.println("Correct!");
-                correctCount++;
-                if (correctCount == Engine.MAX_CYCLES) {
-                    Engine.gameResultWin();
-                }
-            } else {
-                if (randNumb % 2 == 0) {
-                    System.out.println("'" + evenUserAnswer + "' is wrong answer ;(. Correct answer was 'yes'.");
-                    Engine.gameResultLoss();
-                }
-                if (randNumb % 2 != 0) {
-                    System.out.println("'" + evenUserAnswer + "' is wrong answer ;(. Correct answer was 'no'.");
-                    Engine.gameResultLoss();
-                }
-                break;
-            }
-        }
+        return new String[][] {{questionEven1R, correctEven1R}, {questionEven2R, correctEven2R},
+            {questionEven3R, correctEven3R}};
     }
 }

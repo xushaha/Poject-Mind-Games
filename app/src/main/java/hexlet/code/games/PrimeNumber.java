@@ -3,33 +3,41 @@ import hexlet.code.Engine;
 
 public class PrimeNumber {
 
-    public static void gamePrimeNumber() {
+    public static String[][] getQaArrayPrimeNumber() {
+        int randNumb1R = Engine.getRandomNumber();
+        int randNumb2R = Engine.getRandomNumber();
+        int randNumb3R = Engine.getRandomNumber();
 
-        int correctCount = 0;
+        String questionPrimeNumber1R = Integer.toString(randNumb1R);
+        String questionPrimeNumber2R = Integer.toString(randNumb2R);
+        String questionPrimeNumber3R = Integer.toString(randNumb3R);
 
-        while (correctCount < Engine.MAX_CYCLES) {
+        String correctPrimeNumber1R = (isPrimeNumber(randNumb1R)) ? "yes" : "no";
+        String correctPrimeNumber2R = (isPrimeNumber(randNumb2R)) ? "yes" : "no";
+        String correctPrimeNumber3R = (isPrimeNumber(randNumb3R)) ? "yes" : "no";
 
-            int questionPrimeNumber = Engine.getRandomNumber();
-            System.out.println("Question: " + questionPrimeNumber);
+        return new String[][]{{questionPrimeNumber1R, correctPrimeNumber1R},
+            {questionPrimeNumber2R, correctPrimeNumber2R}, {questionPrimeNumber3R, correctPrimeNumber3R}};
+    }
 
-            String primeNumberUserAnswer = Engine.getUserAnswerString();
-            System.out.println("Your answer: " + primeNumberUserAnswer);
-            boolean primeNumberCorrAnswer = Engine.isPrimeNumber(questionPrimeNumber);
-            String primeNumberAnswer = (primeNumberCorrAnswer) ? "yes" : "no";
+    public static boolean isPrimeNumber(int a) {
+        boolean prime = false;
 
+        if ((a == 1) || (a == 2)) {
+            prime = true;
 
-            if (primeNumberAnswer.equals(primeNumberUserAnswer)) {
-                System.out.println("Correct!");
-                correctCount++;
-                if (correctCount == Engine.MAX_CYCLES) {
-                    Engine.gameResultWin();
+        } else {
+            for (int i = 2; i < a; i++) {
+                if (a % i == 0) {
+                    prime = false;
+                    break;
+                } else {
+                    prime = true;
                 }
-            } else {
-                System.out.println("'" + primeNumberUserAnswer + "' is wrong answer ;(. Correct answer was '"
-                        + primeNumberAnswer + "'.");
-                Engine.gameResultLoss();
-                break;
             }
         }
+        return prime;
     }
 }
+
+

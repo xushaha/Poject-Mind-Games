@@ -4,17 +4,17 @@ import java.util.Scanner;
 public class Engine {
 
     //  Методы для всех игр
-    private static String userName;
-    public static final int MAX_CYCLES = 3;
-    public static final int MAX_RAND_NUMBER = 100;
-    public static final int MIN_RAND_NUMBER = 1;
 
+    //получение юзернейма
+    private static String userName;
     public static String getUserName() {
         return userName;
     }
     public static void setUserName(String name) {
         userName = name;
     }
+
+// приветствие
     public static void userGreeting() {
         Scanner scUserName = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
@@ -24,10 +24,15 @@ public class Engine {
 
     }
 
-    public static int getRandomNumber() {
-        return (int) (Math.random() * MAX_RAND_NUMBER + MIN_RAND_NUMBER);
+//получение ответа пользователя
+    public static String getUserAnswer() {
+        Scanner scUserAnswer = new Scanner(System.in);
+        String userAnswer = scUserAnswer.nextLine().toLowerCase();
+        return userAnswer;
     }
 
+
+// формирование строки с рузельтатом (выгирыш/проигрыш)
     public static void gameResultWin() {
         System.out.println("Congratulations, " + getUserName() + "!");
     }
@@ -35,122 +40,41 @@ public class Engine {
         System.out.println("Let's try again, " + getUserName() + "!");
     }
 
-    public static int getUserAnswerInt() {
-        Scanner scUserAnswerInt = new Scanner(System.in);
-        int userAnswerInt = scUserAnswerInt.nextInt();
-        return userAnswerInt;
-    }
-    public static String getUserAnswerString() {
-        Scanner scUserAnswerString = new Scanner(System.in);
-        String userAnswerString = scUserAnswerString.nextLine().toLowerCase();
-        return userAnswerString;
+
+//получение случайного числа от 1 до 100
+    public static final int MAX_RAND_NUMBER = 100;
+    public static final int MIN_RAND_NUMBER = 1;
+    public static int getRandomNumber() {
+        return (int) (Math.random() * MAX_RAND_NUMBER + MIN_RAND_NUMBER);
     }
 
 
 
-    // Методы для игры GCD
-    public static int findCGD(int randNumb1, int randNumb2) {
+//цикл вывода вопроса и проверки ответа
+    private static int correctCount = 0;
+    public static final int MAX_CYCLES = 3;
 
+    public static void checkAnswers(String[][] gameEngine) {
 
-        while ((randNumb1 != 0) && (randNumb2 != 0)) {
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Question: " + gameEngine[i][0]);
+            String userAnswer = Engine.getUserAnswer();
+            System.out.println("Your answer: " + userAnswer);
 
-            if (randNumb1 > randNumb2) {
-                randNumb1 = randNumb1 % randNumb2;
+            if (userAnswer.equals(gameEngine[i][1])) {
+                System.out.println("Correct!");
+                correctCount += 1;
             } else {
-                randNumb2 = randNumb2 % randNumb1;
-            }
-        }
-        return randNumb1 + randNumb2;
-    }
-
-
-
-    // Методы для игры Прогрессия
-
-    public static final int MAX_PROGR_LENGTH = 7;
-    public static final int MIN_PROGR_LENGTH = 5;
-
-    public static final int MAX_PROGR_DIFF = 12;
-    public static final int MIN_PROGR_DIFF = 4;
-
-    public static final int SECRET_POS_KOEF = 1;
-    public static final int MAX_PROGR_START = 8;
-    public static final int MIN_PROGR_START = 5;
-
-    public static int getProgLength() {
-        return (int) (Math.random() * MAX_PROGR_LENGTH + MIN_PROGR_LENGTH);
-    }
-
-    public static int getProgDiff() {
-        return (int) (Math.random() * MAX_PROGR_DIFF + MIN_PROGR_DIFF);
-    }
-
-    public static int getSecretNumberPos() {
-        return (int) (Math.random() * getProgLength() - SECRET_POS_KOEF);
-    }
-
-    public static int getProgressionStart() {
-        return (int) (Math.random() * MAX_PROGR_START + MIN_PROGR_START);
-    }
-
-
-    public static void createProgression(int progLength, int progDiff, int secretNumberPos, int progressionStart) {
-
-        int[] progression = new int[progLength];
-        progression[0] = progressionStart;
-
-        for (int i = 1; i < progLength; i++) {
-            progression[i] = progression[i - 1] + progDiff;
-        }
-
-        System.out.print("Question: ");
-
-        for (int j = 0; j < progLength; j++) {
-            if (j == secretNumberPos) {
-                System.out.print(".. ");
-            } else if (j == progLength - 1) {
-                System.out.println(progression[j]);
-            } else {
-                System.out.print(progression[j] + " ");
-            }
-        }
-
-    }
-
-    public static int getCorrAnswerProgression(int progLength, int progDiff, int secretNumberPos,
-                                               int progressionStart) {
-        int[] progression = new int[progLength];
-        progression[0] = progressionStart;
-
-        for (int i = 1; i < progLength; i++) {
-            progression[i] = progression[i - 1] + progDiff;
-        }
-
-        return progression[secretNumberPos];
-    }
-
-
-
-
-    // Методы для игры Простое число
-
-    public static boolean isPrimeNumber(int questionPrimeNumber) {
-        boolean prime = false;
-
-        if ((questionPrimeNumber == 1) || (questionPrimeNumber == 2)) {
-            prime = true;
-
-        } else {
-            for (int i = 2; i < questionPrimeNumber; i++) {
-                if (questionPrimeNumber % i == 0) {
-                    prime = false;
+                    System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                            + gameEngine[i][1] + "'.");
+                    Engine.gameResultLoss();
                     break;
-                } else {
-                    prime = true;
                 }
+
+            if (correctCount == MAX_CYCLES) {
+                Engine.gameResultWin();
             }
+
         }
-        return prime;
     }
 }
-

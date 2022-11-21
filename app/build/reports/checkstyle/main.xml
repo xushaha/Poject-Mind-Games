@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.45.1">
+<file name="/home/xushaha/hexlet_first_project/java-project-61/app/src/main/java/hexlet/code/Menu.java">
+</file>
+<file name="/home/xushaha/hexlet_first_project/java-project-61/app/src/main/java/hexlet/code/games/Calc.java">
+<error line="35" column="43" severity="error" message="Inner assignments should be avoided." source="com.puppycrawl.tools.checkstyle.checks.coding.InnerAssignmentCheck"/>
+<error line="36" column="43" severity="error" message="Inner assignments should be avoided." source="com.puppycrawl.tools.checkstyle.checks.coding.InnerAssignmentCheck"/>
+<error line="37" column="43" severity="error" message="Inner assignments should be avoided." source="com.puppycrawl.tools.checkstyle.checks.coding.InnerAssignmentCheck"/>
+<error line="38" column="42" severity="error" message="Inner assignments should be avoided." source="com.puppycrawl.tools.checkstyle.checks.coding.InnerAssignmentCheck"/>
+</file>
+<file name="/home/xushaha/hexlet_first_project/java-project-61/app/src/main/java/hexlet/code/games/Even.java">
+</file>
+<file name="/home/xushaha/hexlet_first_project/java-project-61/app/src/main/java/hexlet/code/games/Progression.java">
+</file>
+<file name="/home/xushaha/hexlet_first_project/java-project-61/app/src/main/java/hexlet/code/games/GCD.java">
+</file>
+<file name="/home/xushaha/hexlet_first_project/java-project-61/app/src/main/java/hexlet/code/games/PrimeNumber.java">
+</file>
+<file name="/home/xushaha/hexlet_first_project/java-project-61/app/src/main/java/hexlet/code/Cli.java">
+</file>
+<file name="/home/xushaha/hexlet_first_project/java-project-61/app/src/main/java/hexlet/code/Engine.java">
+</file>
+<file name="/home/xushaha/hexlet_first_project/java-project-61/app/src/main/java/hexlet/code/App.java">
+</file>
+</checkstyle>
