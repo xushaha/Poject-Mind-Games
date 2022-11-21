@@ -29,14 +29,20 @@ public class Calc {
     }
 
     public static String getCorrectAnswerCalc(int a, int b, String operators) {
-        int correctAnswerCalc;
 
         switch (operators) {
-            case "+" -> correctAnswerCalc = a + b;
-            case "-" -> correctAnswerCalc = a - b;
-            case "*" -> correctAnswerCalc = a * b;
-            default -> correctAnswerCalc = 1;
+            case "+" -> {
+                return Integer.toString(a + b);
+            }
+            case "-" -> {
+                return Integer.toString(a - b);
+            }
+            case "*" -> {
+                return Integer.toString(a * b);
+            }
+            default -> {
+                return "";
+            }
         }
-        return Integer.toString(correctAnswerCalc);
     }
 }
