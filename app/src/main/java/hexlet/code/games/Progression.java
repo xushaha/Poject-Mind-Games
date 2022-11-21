@@ -21,8 +21,8 @@ public class Progression {
         return (int) (Math.random() * MAX_PROGR_DIFF + MIN_PROGR_DIFF);
     }
 
-    public static int getSecretNumberPos() {
-        return (int) (Math.random() * (getProgLength() - SECRET_POS_KOEF));
+    public static int getSecretNumberPos(int progLenth) {
+        return (int) (Math.random() * (progLenth - SECRET_POS_KOEF));
     }
 
     public static int getProgressionStart() {
@@ -67,17 +67,17 @@ public class Progression {
     public static String[][] getQaArrayProgression() {
         int progLength1R = getProgLength();
         int progDiff1R = getProgDiff();
-        int secretNumberPos1R = getSecretNumberPos();
+        int secretNumberPos1R = getSecretNumberPos(progLength1R);
         int progressionStart1R = getProgressionStart();
 
         int progLength2R = getProgLength();
         int progDiff2R = getProgDiff();
-        int secretNumberPos2R = getSecretNumberPos();
+        int secretNumberPos2R = getSecretNumberPos(progLength2R);
         int progressionStart2R = getProgressionStart();
 
         int progLength3R = getProgLength();
         int progDiff3R = getProgDiff();
-        int secretNumberPos3R = getSecretNumberPos();
+        int secretNumberPos3R = getSecretNumberPos(progLength3R);
         int progressionStart3R = getProgressionStart();
 
         String questionProgression1R = createProgression(progLength1R, progDiff1R, secretNumberPos1R,
