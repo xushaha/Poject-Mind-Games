@@ -23,12 +23,13 @@ public class PrimeNumber {
     public static boolean isPrimeNumber(int a) {
         boolean prime = false;
 
-        if ((a == 1) || (a == 2)) {
+        if (a == 2) {
             prime = true;
-
+        } else if (a == 1) {
+            prime = false;
         } else {
             for (int i = 2; i < a; i++) {
-                if (a % i == 0) {
+                if (a % i == 0)  {
                     prime = false;
                     break;
                 } else {
@@ -39,5 +40,3 @@ public class PrimeNumber {
         return prime;
     }
 }
-
-

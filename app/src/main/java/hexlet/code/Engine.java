@@ -3,9 +3,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    //  Методы для всех игр
-
-    //получение юзернейма
+//получение юзернейма
     private static String userName;
     public static String getUserName() {
         return userName;
@@ -32,7 +30,7 @@ public class Engine {
     }
 
 
-// формирование строки с рузельтатом (выгирыш/проигрыш)
+// формирование строки с результатом (выгирыш/проигрыш)
     public static void gameResultWin() {
         System.out.println("Congratulations, " + getUserName() + "!");
     }
@@ -49,12 +47,13 @@ public class Engine {
     }
 
 
-
 //цикл вывода вопроса и проверки ответа
     private static int correctCount = 0;
     public static final int MAX_CYCLES = 3;
 
-    public static void checkAnswers(String[][] gameEngine) {
+    public static void checkAnswers(String[][] gameEngine, String rules) {
+        userGreeting();
+        System.out.println(rules);
 
         for (int i = 0; i < MAX_CYCLES; i++) {
             System.out.println("Question: " + gameEngine[i][0]);
@@ -74,7 +73,7 @@ public class Engine {
             if (correctCount == MAX_CYCLES) {
                 Engine.gameResultWin();
             }
-
         }
+
     }
 }
