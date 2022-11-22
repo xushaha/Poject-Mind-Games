@@ -17,11 +17,11 @@ public class Menu {
     public static final int CHOICE_PROGRESSION = 5;
     public static final int CHOICE_PRIME_NUMBER = 6;
 
-    private static final String rulesEven = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    private static final String rulesCalc = "What is the result of the expression?";
-    private static final String rulesGCD = "Find the greatest common divisor of given numbers.";
-    private static final String rulesProgression = "What number is missing in the progression?";
-    private static final String rulesPrimeNumber = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final String RULES_EVEN = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String RULES_CALC = "What is the result of the expression?";
+    private static final String RULES_GCD = "Find the greatest common divisor of given numbers.";
+    private static final String RULES_PROGRESSION = "What number is missing in the progression?";
+    private static final String RULES_PRIME_NUMBER = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 
     public static void gameChoice() {
@@ -34,11 +34,11 @@ public class Menu {
         switch (choice) {
             case CHOICE_EXIT -> System.out.println("Bye, see you soon!");
             case CHOICE_GREETING -> Cli.greeting();
-            case CHOICE_EVEN -> Engine.checkAnswers(Even.getQaArrayEven(), rulesEven);
-            case CHOICE_CALC -> Engine.checkAnswers(Calc.getQaArrayCalc(), rulesCalc);
-            case CHOICE_GCD -> Engine.checkAnswers(GCD.getQaArrayGCD(), rulesGCD);
-            case CHOICE_PROGRESSION -> Engine.checkAnswers(Progression.getQaArrayProgression(), rulesProgression);
-            case CHOICE_PRIME_NUMBER -> Engine.checkAnswers(PrimeNumber.getQaArrayPrimeNumber(), rulesPrimeNumber);
+            case CHOICE_EVEN -> Engine.checkAnswers(Even.getQaArrayEven(), RULES_EVEN);
+            case CHOICE_CALC -> Engine.checkAnswers(Calc.getQaArrayCalc(), RULES_CALC);
+            case CHOICE_GCD -> Engine.checkAnswers(GCD.getQaArrayGCD(), RULES_GCD);
+            case CHOICE_PROGRESSION -> Engine.checkAnswers(Progression.getQaArrayProgression(), RULES_PROGRESSION);
+            case CHOICE_PRIME_NUMBER -> Engine.checkAnswers(PrimeNumber.getQaArrayPrimeNumber(), RULES_PRIME_NUMBER);
             default -> System.out.println("Try again");
         }
     }
