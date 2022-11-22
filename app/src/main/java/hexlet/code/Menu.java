@@ -17,11 +17,11 @@ public class Menu {
     public static final int CHOICE_PROGRESSION = 5;
     public static final int CHOICE_PRIME_NUMBER = 6;
 
-    static String rulesEven = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    static String rulesCalc = "What is the result of the expression?";
-    static String rulesGCD = "Find the greatest common divisor of given numbers.";
-    static String rulesProgression = "What number is missing in the progression?";
-    static String rulesPrimeNumber = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static String rulesEven = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static String rulesCalc = "What is the result of the expression?";
+    public static String rulesGCD = "Find the greatest common divisor of given numbers.";
+    public static String rulesProgression = "What number is missing in the progression?";
+    public static String rulesPrimeNumber = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 
     public static void gameChoice() {
