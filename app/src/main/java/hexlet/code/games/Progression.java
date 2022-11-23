@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 public class Progression {
 
     public static final int MAX_PROGR_LENGTH = 8;
@@ -12,6 +14,8 @@ public class Progression {
 
     public static final int MAX_PROGR_START = 8;
     public static final int MIN_PROGR_START = 5;
+
+
 
     public static int getProgLength() {
         return (int) (Math.random() * MAX_PROGR_LENGTH + MIN_PROGR_LENGTH);
@@ -28,7 +32,6 @@ public class Progression {
     public static int getProgressionStart() {
         return (int) (Math.random() * MAX_PROGR_START + MIN_PROGR_START);
     }
-
 
     public static String createProgression(int progLength, int progDiff, int secretNumberPos, int progressionStart) {
 
@@ -52,8 +55,8 @@ public class Progression {
         return progressionString.toString();
     }
 
-    public static String getCorrAnswerProgression(int progLength, int progDiff, int secretNumberPos,
-                                                  int progressionStart) {
+    public static String getCorrAnswer(int progLength, int progDiff, int secretNumberPos, int progressionStart) {
+
         int[] progression = new int[progLength];
         progression[0] = progressionStart;
 
@@ -64,38 +67,36 @@ public class Progression {
         return Integer.toString(progression[secretNumberPos]);
     }
 
-    public static String[][] getQaArrayProgression() {
-        int progLength1R = getProgLength();
-        int progDiff1R = getProgDiff();
-        int secretNumberPos1R = getSecretNumberPos(progLength1R);
-        int progressionStart1R = getProgressionStart();
 
-        int progLength2R = getProgLength();
-        int progDiff2R = getProgDiff();
-        int secretNumberPos2R = getSecretNumberPos(progLength2R);
-        int progressionStart2R = getProgressionStart();
 
-        int progLength3R = getProgLength();
-        int progDiff3R = getProgDiff();
-        int secretNumberPos3R = getSecretNumberPos(progLength3R);
-        int progressionStart3R = getProgressionStart();
 
-        String questionProgression1R = createProgression(progLength1R, progDiff1R, secretNumberPos1R,
-                progressionStart1R);
-        String questionProgression2R = createProgression(progLength2R, progDiff2R, secretNumberPos2R,
-                progressionStart2R);
-        String questionProgression3R = createProgression(progLength3R, progDiff3R, secretNumberPos3R,
-                progressionStart3R);
+    public static String[][] getQaArray() {
 
-        String correctProgression1R = getCorrAnswerProgression(progLength1R, progDiff1R, secretNumberPos1R,
-                progressionStart1R);
-        String correctProgression2R = getCorrAnswerProgression(progLength2R, progDiff2R, secretNumberPos2R,
-                progressionStart2R);
-        String correctProgression3R = getCorrAnswerProgression(progLength3R, progDiff3R, secretNumberPos3R,
-                progressionStart3R);
+        String[][] qaArray = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
-        return new String[][]{{questionProgression1R, correctProgression1R}, {questionProgression2R,
-                correctProgression2R}, {questionProgression3R, correctProgression3R}};
+        for (int i = 0; i < Engine.MAX_CYCLES; i++) {
+
+            final int progLength = getProgLength();
+            final int progDiff = getProgDiff();
+            final int secretNumberPos = getSecretNumberPos(progLength);
+            final int progressionStart = getProgressionStart();
+
+            String question = createProgression(progLength, progDiff, secretNumberPos,
+                    progressionStart);
+            String correctAnswer = getCorrAnswer(progLength, progDiff, secretNumberPos,
+                    progressionStart);
+
+            qaArray[i][0] = question;
+            qaArray[i][1] = correctAnswer;
+
+        }
+        return qaArray;
+
     }
 
+
+
+    public static String getRules() {
+        return "What number is missing in the progression?";
+    }
 }

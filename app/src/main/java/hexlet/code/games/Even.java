@@ -3,20 +3,24 @@ import hexlet.code.Engine;
 
 
 public class Even {
-    public static String[][] getQaArrayEven() {
-        int randNumb1R = Engine.getRandomNumber();
-        int randNumb2R = Engine.getRandomNumber();
-        int randNumb3R = Engine.getRandomNumber();
+    public static String[][] getQaArray() {
 
-        String questionEven1R = Integer.toString(randNumb1R);
-        String questionEven2R = Integer.toString(randNumb2R);
-        String questionEven3R = Integer.toString(randNumb3R);
+        String[][] qaArray = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
-        String correctEven1R = (randNumb1R % 2 == 0) ? "yes" : "no";
-        String correctEven2R = (randNumb2R % 2 == 0) ? "yes" : "no";
-        String correctEven3R = (randNumb3R % 2 == 0) ? "yes" : "no";
+        for (int i = 0; i < Engine.MAX_CYCLES; i++) {
 
-        return new String[][] {{questionEven1R, correctEven1R}, {questionEven2R, correctEven2R},
-            {questionEven3R, correctEven3R}};
+            int randNumb = Engine.getRandomNumber();
+            String question = Integer.toString(randNumb);
+            String correctAnswer = (randNumb % 2 == 0) ? "yes" : "no";
+
+            qaArray[i][0] = question;
+            qaArray[i][1] = correctAnswer;
+        }
+        return qaArray;
+    }
+
+
+    public static String getRules() {
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 }

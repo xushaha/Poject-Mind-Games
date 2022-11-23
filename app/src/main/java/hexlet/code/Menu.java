@@ -9,22 +9,26 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Menu {
-    public static final int CHOICE_EXIT = 0;
-    public static final int CHOICE_GREETING = 1;
-    public static final int CHOICE_EVEN = 2;
-    public static final int CHOICE_CALC = 3;
-    public static final int CHOICE_GCD = 4;
-    public static final int CHOICE_PROGRESSION = 5;
-    public static final int CHOICE_PRIME_NUMBER = 6;
+    public static final int EXIT = 0;
+    public static final int GREETING = 1;
+    public static final int EVEN = 2;
+    public static final int CALC = 3;
+    public static final int GREATESTCD = 4;
+    public static final int PROGRESSION = 5;
+    public static final int PRIME_NUMBER = 6;
 
-    private static final String RULES_EVEN = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    private static final String RULES_CALC = "What is the result of the expression?";
-    private static final String RULES_GCD = "Find the greatest common divisor of given numbers.";
-    private static final String RULES_PROGRESSION = "What number is missing in the progression?";
-    private static final String RULES_PRIME_NUMBER = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 
     public static void gameChoice() {
+
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println("6 - Prime number");
+        System.out.println("5 - Progression");
+        System.out.println("4 - GCD");
+        System.out.println("3 - Calc");
+        System.out.println("2 - Even");
+        System.out.println("1 - Greet");
+        System.out.println("0 - Exit");
 
         Scanner gameChoice = new Scanner(System.in);
         int choice = gameChoice.nextInt();
@@ -32,13 +36,13 @@ public class Menu {
         System.out.println("Your choice: " + choice);
 
         switch (choice) {
-            case CHOICE_EXIT -> System.out.println("Bye, see you soon!");
-            case CHOICE_GREETING -> Cli.greeting();
-            case CHOICE_EVEN -> Engine.checkAnswers(Even.getQaArrayEven(), RULES_EVEN);
-            case CHOICE_CALC -> Engine.checkAnswers(Calc.getQaArrayCalc(), RULES_CALC);
-            case CHOICE_GCD -> Engine.checkAnswers(GCD.getQaArrayGCD(), RULES_GCD);
-            case CHOICE_PROGRESSION -> Engine.checkAnswers(Progression.getQaArrayProgression(), RULES_PROGRESSION);
-            case CHOICE_PRIME_NUMBER -> Engine.checkAnswers(PrimeNumber.getQaArrayPrimeNumber(), RULES_PRIME_NUMBER);
+            case EXIT -> System.out.println("Bye, see you soon!");
+            case GREETING -> Cli.greeting();
+            case EVEN -> Engine.checkAnswers(Even.getQaArray(), Even.getRules());
+            case CALC -> Engine.checkAnswers(Calc.getQaArray(), Calc.getRules());
+            case GREATESTCD -> Engine.checkAnswers(GCD.getQaArray(), GCD.getRules());
+            case PROGRESSION -> Engine.checkAnswers(Progression.getQaArray(), Progression.getRules());
+            case PRIME_NUMBER -> Engine.checkAnswers(PrimeNumber.getQaArray(), PrimeNumber.getRules());
             default -> System.out.println("Try again");
         }
     }

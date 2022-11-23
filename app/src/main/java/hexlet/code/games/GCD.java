@@ -3,29 +3,24 @@ import hexlet.code.Engine;
 
 public class GCD {
 
-    public static String[][] getQaArrayGCD() {
-        int firstNumber1R = Engine.getRandomNumber();
-        int secondNumber1R = Engine.getRandomNumber();
+    public static String[][] getQaArray() {
 
-        int firstNumber2R = Engine.getRandomNumber();
-        int secondNumber2R = Engine.getRandomNumber();
+        String[][] qaArray = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
-        int firstNumber3R = Engine.getRandomNumber();
-        int secondNumber3R = Engine.getRandomNumber();
+        for (int i = 0; i < Engine.MAX_CYCLES; i++) {
 
+            int firstNumber = Engine.getRandomNumber();
+            int secondNumber = Engine.getRandomNumber();
+            String question = firstNumber + " " + secondNumber;
+            String correctAnswer = Integer.toString(findGCD(firstNumber, secondNumber));
 
-        String questionGCD1 = createQuestionGCD(firstNumber1R, secondNumber1R);
-        String questionGCD2 = createQuestionGCD(firstNumber2R, secondNumber2R);
-        String questionGCD3 = createQuestionGCD(firstNumber3R, secondNumber3R);
-
-
-        String correctGCD1R = Integer.toString(findGCD(firstNumber1R, secondNumber1R));
-        String correctGCD2R = Integer.toString(findGCD(firstNumber2R, secondNumber2R));
-        String correctGCD3R = Integer.toString(findGCD(firstNumber3R, secondNumber3R));
-
-        return new String[][] {{questionGCD1, correctGCD1R}, {questionGCD2, correctGCD2R},
-            {questionGCD3, correctGCD3R}};
+            qaArray[i][0] = question;
+            qaArray[i][1] = correctAnswer;
+        }
+        return qaArray;
     }
+
+
 
     public static int findGCD(int a, int b) {
 
@@ -40,8 +35,9 @@ public class GCD {
         return a + b;
     }
 
-    public static String createQuestionGCD(int c, int d) {
-        return c + " " + d;
+
+    public static String getRules() {
+        return "Find the greatest common divisor of given numbers.";
     }
 
 }
