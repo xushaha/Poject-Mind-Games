@@ -28,8 +28,7 @@ Game Progression. The player must find missing element of the arithmetic progres
 
 
 Game Prime Number. The player must determine if the number is prime.
-<script id="asciicast-UTaTukt0Ccu5bQu2jDjLlhbXX" src="https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX.js" async></script>
-
+[![asciicast](https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX.svg)](https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX)
 
 
 

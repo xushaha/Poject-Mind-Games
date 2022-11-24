@@ -35,7 +35,7 @@ public class Progression {
 
         for (int i = 0; i < Engine.MAX_CYCLES; i++) {
 
-            final int progLength = (int) (Math.random() * MAX_PROGR_LENGTH + MIN_PROGR_LENGTH);;
+            final int progLength = (int) (Math.random() * MAX_PROGR_LENGTH + MIN_PROGR_LENGTH);
             final int progDiff = (int) (Math.random() * MAX_PROGR_DIFF + MIN_PROGR_DIFF);
             final int secretNumberPos = (int) (Math.random() * (progLength - SECRET_POS_KOEF));
             final int progressionStart = (int) (Math.random() * MAX_PROGR_START + MIN_PROGR_START);

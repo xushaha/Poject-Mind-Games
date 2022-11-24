@@ -3,15 +3,6 @@ import java.util.Scanner;
 
 public class Engine {
 
-//получение юзернейма
-    private static String userName;
-    public static String getUserName() {
-        return userName;
-    }
-    public static void setUserName(String name) {
-        userName = name;
-    }
-
 //получение случайного числа от 1 до 100
     public static final int MAX_RAND_NUMBER = 100;
     public static final int MIN_RAND_NUMBER = 1;
