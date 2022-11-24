@@ -43,7 +43,7 @@ public class Menu {
             case GREATESTCD -> Engine.launchGame(GCD.generateGameData(), GCD.rules());
             case PROGRESSION -> Engine.launchGame(Progression.generateGameData(), Progression.rules());
             case PRIME_NUMBER -> Engine.launchGame(PrimeNumber.generateGameData(), PrimeNumber.rules());
-            default -> System.out.println("Try again");
+            default -> System.out.println("Invalid choice. Try again");
         }
     }
 }

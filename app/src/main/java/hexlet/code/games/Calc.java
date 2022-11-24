@@ -20,7 +20,7 @@ public class Calc {
                 case "+" -> Integer.toString(firstMember + secondMember);
                 case "-" -> Integer.toString(firstMember - secondMember);
                 case "*" -> Integer.toString(firstMember * secondMember);
-                default -> "";
+                default -> "Invalid data";
             };
 
             qaArray[i][0] = question;
