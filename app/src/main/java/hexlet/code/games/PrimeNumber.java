@@ -26,8 +26,6 @@ public class PrimeNumber {
 
         if (a <= 1) {
             prime = false;
-        } else if (a == 2) {
-            prime = true;
         } else {
             for (int i = 2; i < a; i++) {
                 if (a % i == 0) {
