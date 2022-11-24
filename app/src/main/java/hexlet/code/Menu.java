@@ -38,11 +38,11 @@ public class Menu {
         switch (choice) {
             case EXIT -> System.out.println("Bye, see you soon!");
             case GREETING -> Cli.greeting();
-            case EVEN -> Engine.checkAnswers(Even.getQaArray(), Even.getRules());
-            case CALC -> Engine.checkAnswers(Calc.getQaArray(), Calc.getRules());
-            case GREATESTCD -> Engine.checkAnswers(GCD.getQaArray(), GCD.getRules());
-            case PROGRESSION -> Engine.checkAnswers(Progression.getQaArray(), Progression.getRules());
-            case PRIME_NUMBER -> Engine.checkAnswers(PrimeNumber.getQaArray(), PrimeNumber.getRules());
+            case EVEN -> Engine.launchGame(Even.generateGameData(), Even.rules());
+            case CALC -> Engine.launchGame(Calc.generateGameData(), Calc.rules());
+            case GREATESTCD -> Engine.launchGame(GCD.generateGameData(), GCD.rules());
+            case PROGRESSION -> Engine.launchGame(Progression.generateGameData(), Progression.rules());
+            case PRIME_NUMBER -> Engine.launchGame(PrimeNumber.generateGameData(), PrimeNumber.rules());
             default -> System.out.println("Try again");
         }
     }

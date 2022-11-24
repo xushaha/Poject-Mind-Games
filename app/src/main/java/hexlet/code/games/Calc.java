@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class Calc {
     private static final String[] OPERATOR = {"+", "-", "*"};
 
-    public static String[][] getQaArray() {
+    public static String[][] generateGameData() {
 
         String[][] qaArray = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
@@ -30,7 +30,7 @@ public class Calc {
     }
 
 
-    public static String getRules() {
+    public static String rules() {
         return "What is the result of the expression?";
     }
 }

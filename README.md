@@ -1,10 +1,16 @@
+This project is a set of five console games based on popular mobile brain training apps:
 
-Fifth step of first project (game Even): https://asciinema.org/a/ZmWMb1fAwiYpuYHvXFjAxOIK9
-Sixth step of first project (game Calc): https://asciinema.org/a/r7d7ExlBm7HIpvbuvEeMj0Mlr
-Seventh step of first project (game GCD): https://asciinema.org/a/dpgsXl6q8mwbEYuvPRtyzysvq
-Eighth step of first project (game Progression): https://asciinema.org/a/FV39JccEspuAMK7sbB4nPPCII
-Ninth step of first project (game Prime Number):
-https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX
+
+Game Even: [![asciicast](https://asciinema.org/a/ZmWMb1fAwiYpuYHvXFjAxOIK9.svg)](https://asciinema.org/a/ZmWMb1fAwiYpuYHvXFjAxOIK9)
+
+Game Calc: [![asciicast](https://asciinema.org/a/r7d7ExlBm7HIpvbuvEeMj0Mlr.svg)](https://asciinema.org/a/r7d7ExlBm7HIpvbuvEeMj0Mlr)
+
+Game GCD: [![asciicast](https://asciinema.org/a/dpgsXl6q8mwbEYuvPRtyzysvq.svg)](https://asciinema.org/a/dpgsXl6q8mwbEYuvPRtyzysvq)
+
+Game Progression: [![asciicast](https://asciinema.org/a/FV39JccEspuAMK7sbB4nPPCII.svg)](https://asciinema.org/a/FV39JccEspuAMK7sbB4nPPCII)
+
+Game Prime Number: [![asciicast](https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX.svg)](https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX)
+
 
 
 

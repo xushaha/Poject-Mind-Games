@@ -3,7 +3,7 @@ import hexlet.code.Engine;
 
 public class GCD {
 
-    public static String[][] getQaArray() {
+    public static String[][] generateGameData() {
 
         String[][] qaArray = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
@@ -36,7 +36,7 @@ public class GCD {
     }
 
 
-    public static String getRules() {
+    public static String rules() {
         return "Find the greatest common divisor of given numbers.";
     }
 

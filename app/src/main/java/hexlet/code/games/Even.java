@@ -3,7 +3,7 @@ import hexlet.code.Engine;
 
 
 public class Even {
-    public static String[][] getQaArray() {
+    public static String[][] generateGameData() {
 
         String[][] qaArray = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
@@ -20,7 +20,7 @@ public class Even {
     }
 
 
-    public static String getRules() {
+    public static String rules() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 }

@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 public class PrimeNumber {
 
 
-    public static String[][] getQaArray() {
+    public static String[][] generateGameData() {
 
         String[][] qaArray = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
@@ -33,8 +33,6 @@ public class PrimeNumber {
                 if (a % i == 0) {
                     prime = false;
                     break;
-                } else {
-                    prime = true;
                 }
             }
         }
@@ -42,7 +40,7 @@ public class PrimeNumber {
     }
 
 
-    public static String getRules() {
+    public static String rules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 }
