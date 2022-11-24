@@ -6,9 +6,11 @@ Game Even. The player needs to determine if the number is even.
 
 
 
+
 Game Calculator.The player needs to calculate the values of the arithmetic expressions.
 
 [![asciicast](https://asciinema.org/a/r7d7ExlBm7HIpvbuvEeMj0Mlr.svg)](https://asciinema.org/a/r7d7ExlBm7HIpvbuvEeMj0Mlr)
+
 
 
 
@@ -18,13 +20,15 @@ Game GCD (greatest common divisor). The player needs to find the greatest common
 
 
 
+
 Game Progression. The player must find missing element of the arithmetic progression.
 [![asciicast](https://asciinema.org/a/FV39JccEspuAMK7sbB4nPPCII.svg)](https://asciinema.org/a/FV39JccEspuAMK7sbB4nPPCII)
 
 
 
+
 Game Prime Number. The player must determine if the number is prime.
-[![asciicast](https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX.svg)](https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX)
+<script id="asciicast-UTaTukt0Ccu5bQu2jDjLlhbXX" src="https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX.js" async></script>
 
 
 
