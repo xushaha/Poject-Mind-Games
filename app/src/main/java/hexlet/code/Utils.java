@@ -24,7 +24,6 @@ public class Utils {
 
 
     //константы для цикла вывода вопроса и проверки ответа
-
     public static final int MAX_CYCLES = 3;
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;

@@ -4,10 +4,6 @@ import hexlet.code.Utils;
 
 public class Progression {
 
-    public static void startGame() {
-        Engine.launchGame(Progression.generateGameData(), Progression.rules());
-    }
-
     public static final int MIN_PROGR_LENGTH = 5;
     public static final int MAX_PROGR_LENGTH = 8;
     public static final int MIN_PROGR_DIFF = 4;
@@ -28,10 +24,9 @@ public class Progression {
         return progression;
     }
 
-    public static String[][] generateGameData() {
-
+    public static void startGame() {
+        String rules = "What number is missing in the progression?";
         String[][] qaArray = new String[Utils.MAX_CYCLES][Utils.MAX_CYCLES];
-
 
         for (int i = 0; i < Utils.MAX_CYCLES; i++) {
 
@@ -40,7 +35,6 @@ public class Progression {
             final int secretNumberPos = (int) (Math.random() * (progLength - SECRET_POS_KOEF));
             final int progressionStart = Utils.getRandomNumber(MIN_PROGR_START, MAX_PROGR_START);
             int[] progression = createProgression(progLength, progDiff, progressionStart);
-
 
             StringBuilder question = new StringBuilder();
 
@@ -54,16 +48,11 @@ public class Progression {
                 }
             }
 
-
             qaArray[i][Utils.QUESTION] = String.valueOf(question);
             qaArray[i][Utils.ANSWER] = Integer.toString(progression[secretNumberPos]);
 
         }
-        return qaArray;
-
+        Engine.gameMechanics(qaArray, rules);
     }
 
-    public static String rules() {
-        return "What number is missing in the progression?";
-    }
 }

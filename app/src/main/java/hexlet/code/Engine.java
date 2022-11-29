@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static void launchGame(String[][] gameEngine, String rules) {
+    public static void gameMechanics(String[][] gameEngine, String rules) {
         Scanner scUserName = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");

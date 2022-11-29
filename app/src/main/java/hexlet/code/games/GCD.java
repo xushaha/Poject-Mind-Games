@@ -5,22 +5,18 @@ import hexlet.code.Utils;
 public class GCD {
 
     public static void startGame() {
-        Engine.launchGame(GCD.generateGameData(), GCD.rules());
-    }
-
-    public static String[][] generateGameData() {
-
+        String rules = "Find the greatest common divisor of given numbers.";
         String[][] qaArray = new String[Utils.MAX_CYCLES][Utils.MAX_CYCLES];
 
         for (int i = 0; i < Utils.MAX_CYCLES; i++) {
-
             int firstNumber = Utils.getRandomNumber();
             int secondNumber = Utils.getRandomNumber();
 
             qaArray[i][Utils.QUESTION] = firstNumber + " " + secondNumber;
             qaArray[i][Utils.ANSWER] = Integer.toString(findGCD(firstNumber, secondNumber));
         }
-        return qaArray;
+
+        Engine.gameMechanics(qaArray, rules);
     }
 
     public static int findGCD(int a, int b) {
@@ -34,10 +30,6 @@ public class GCD {
             }
         }
         return a + b;
-    }
-
-    public static String rules() {
-        return "Find the greatest common divisor of given numbers.";
     }
 
 }
