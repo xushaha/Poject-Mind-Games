@@ -1,20 +1,20 @@
 package hexlet.code.games;
-
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Progression {
 
-    public static final int MAX_PROGR_LENGTH = 8;
+    public static void startGame() {
+        Engine.launchGame(Progression.generateGameData(), Progression.rules());
+    }
+
     public static final int MIN_PROGR_LENGTH = 5;
-
-    public static final int MAX_PROGR_DIFF = 13;
+    public static final int MAX_PROGR_LENGTH = 8;
     public static final int MIN_PROGR_DIFF = 4;
-
+    public static final int MAX_PROGR_DIFF = 13;
     public static final int SECRET_POS_KOEF = 1;
-
-    public static final int MAX_PROGR_START = 8;
     public static final int MIN_PROGR_START = 5;
-
+    public static final int MAX_PROGR_START = 8;
 
     public static int[] createProgression(int progLength, int progDiff, int progressionStart) {
 
@@ -30,15 +30,15 @@ public class Progression {
 
     public static String[][] generateGameData() {
 
-        String[][] qaArray = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
+        String[][] qaArray = new String[Utils.MAX_CYCLES][Utils.MAX_CYCLES];
 
 
-        for (int i = 0; i < Engine.MAX_CYCLES; i++) {
+        for (int i = 0; i < Utils.MAX_CYCLES; i++) {
 
-            final int progLength = (int) (Math.random() * MAX_PROGR_LENGTH + MIN_PROGR_LENGTH);
-            final int progDiff = (int) (Math.random() * MAX_PROGR_DIFF + MIN_PROGR_DIFF);
+            final int progLength = Utils.getRandomNumber(MIN_PROGR_LENGTH, MAX_PROGR_LENGTH);
+            final int progDiff = Utils.getRandomNumber(MIN_PROGR_DIFF, MAX_PROGR_DIFF);
             final int secretNumberPos = (int) (Math.random() * (progLength - SECRET_POS_KOEF));
-            final int progressionStart = (int) (Math.random() * MAX_PROGR_START + MIN_PROGR_START);
+            final int progressionStart = Utils.getRandomNumber(MIN_PROGR_START, MAX_PROGR_START);
             int[] progression = createProgression(progLength, progDiff, progressionStart);
 
 
@@ -54,16 +54,14 @@ public class Progression {
                 }
             }
 
-            String correctAnswer = Integer.toString(progression[secretNumberPos]);
 
-            qaArray[i][0] = String.valueOf(question);
-            qaArray[i][1] = correctAnswer;
+            qaArray[i][Utils.QUESTION] = String.valueOf(question);
+            qaArray[i][Utils.ANSWER] = Integer.toString(progression[secretNumberPos]);
 
         }
         return qaArray;
 
     }
-
 
     public static String rules() {
         return "What number is missing in the progression?";

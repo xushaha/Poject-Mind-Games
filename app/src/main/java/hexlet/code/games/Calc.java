@@ -1,20 +1,24 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 
 public class Calc {
     private static final String[] OPERATOR = {"+", "-", "*"};
 
+    public static void startGame() {
+        Engine.launchGame(Calc.generateGameData(), Calc.rules());
+    }
+
     public static String[][] generateGameData() {
 
-        String[][] qaArray = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
+        String[][] qaArray = new String[Utils.MAX_CYCLES][Utils.MAX_CYCLES];
 
-        for (int i = 0; i < Engine.MAX_CYCLES; i++) {
+        for (int i = 0; i < Utils.MAX_CYCLES; i++) {
 
-            int firstMember = Engine.getRandomNumber();
-            int secondMember = Engine.getRandomNumber();
-            String operator = OPERATOR[(int) (Math.random() * OPERATOR.length)];
-            String question = firstMember + " " + operator + " " + secondMember;
+            int firstMember = Utils.getRandomNumber();
+            int secondMember = Utils.getRandomNumber();
+            String operator = OPERATOR[Utils.getRandomNumber(OPERATOR.length)];
 
             String correctAnswer = switch (operator) {
                 case "+" -> Integer.toString(firstMember + secondMember);
@@ -23,12 +27,11 @@ public class Calc {
                 default -> "Invalid data";
             };
 
-            qaArray[i][0] = question;
-            qaArray[i][1] = correctAnswer;
+            qaArray[i][Utils.QUESTION] = firstMember + " " + operator + " " + secondMember;
+            qaArray[i][Utils.ANSWER] = correctAnswer;
         }
         return qaArray;
     }
-
 
     public static String rules() {
         return "What is the result of the expression?";

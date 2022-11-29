@@ -3,18 +3,6 @@ import java.util.Scanner;
 
 public class Engine {
 
-//получение случайного числа от 1 до 100
-    public static final int MAX_RAND_NUMBER = 100;
-    public static final int MIN_RAND_NUMBER = 1;
-    public static int getRandomNumber() {
-        return (int) (Math.random() * MAX_RAND_NUMBER + MIN_RAND_NUMBER);
-    }
-
-
-//цикл вывода вопроса и проверки ответа
-    private static int correctCount = 0;
-    public static final int MAX_CYCLES = 3;
-
     public static void launchGame(String[][] gameEngine, String rules) {
         Scanner scUserName = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
@@ -25,7 +13,7 @@ public class Engine {
         System.out.println(rules);
 
 
-        for (int i = 0; i < MAX_CYCLES; i++) {
+        for (int i = 0; i < Utils.MAX_CYCLES; i++) {
             System.out.println("Question: " + gameEngine[i][0]);
             Scanner scUserAnswer = new Scanner(System.in);
             String userAnswer = scUserAnswer.nextLine().toLowerCase();
@@ -33,7 +21,7 @@ public class Engine {
 
             if (userAnswer.equals(gameEngine[i][1])) {
                 System.out.println("Correct!");
-                correctCount += 1;
+                Utils.correctCount += 1;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                     + gameEngine[i][1] + "'.");
@@ -42,7 +30,7 @@ public class Engine {
             }
         }
 
-        if (correctCount == MAX_CYCLES) {
+        if (Utils.correctCount == Utils.MAX_CYCLES) {
             System.out.println("Congratulations, " + userName + "!");
         }
 
