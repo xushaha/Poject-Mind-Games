@@ -11,7 +11,7 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
 
         System.out.println(rules);
-
+        int correctCount = 0;
 
         for (int i = 0; i < Utils.MAX_CYCLES; i++) {
             System.out.println("Question: " + gameEngine[i][0]);
@@ -21,7 +21,7 @@ public class Engine {
 
             if (userAnswer.equals(gameEngine[i][1])) {
                 System.out.println("Correct!");
-                Utils.correctCount += 1;
+                correctCount += 1;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                     + gameEngine[i][1] + "'.");
@@ -30,7 +30,7 @@ public class Engine {
             }
         }
 
-        if (Utils.correctCount == Utils.MAX_CYCLES) {
+        if (correctCount == Utils.MAX_CYCLES) {
             System.out.println("Congratulations, " + userName + "!");
         }
 
