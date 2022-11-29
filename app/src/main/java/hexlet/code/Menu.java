@@ -18,8 +18,6 @@ public class Menu {
     public static final int PRIME_NUMBER = 6;
     public static final int EXIT = 0;
 
-
-
     public static void gameChoice() {
 
         System.out.println("Please enter the game number and press Enter.");

@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 public class PrimeNumber {
 
     public static void startGame() {
-        String rules= "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] qaArray = new String[Utils.MAX_CYCLES][Utils.MAX_CYCLES];
 
         for (int i = 0; i < Utils.MAX_CYCLES; i++) {
