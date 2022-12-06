@@ -6,17 +6,17 @@ public class GCD {
 
     public static void startGame() {
         String rules = "Find the greatest common divisor of given numbers.";
-        String[][] qaArray = new String[Utils.MAX_CYCLES][Utils.MAX_CYCLES];
+        String[][] questionsAndAnswers = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
-        for (int i = 0; i < Utils.MAX_CYCLES; i++) {
+        for (int i = 0; i < Engine.MAX_CYCLES; i++) {
             int firstNumber = Utils.getRandomNumber();
             int secondNumber = Utils.getRandomNumber();
 
-            qaArray[i][Utils.QUESTION] = firstNumber + " " + secondNumber;
-            qaArray[i][Utils.ANSWER] = Integer.toString(findGCD(firstNumber, secondNumber));
+            questionsAndAnswers[i][Engine.QUESTION] = firstNumber + " " + secondNumber;
+            questionsAndAnswers[i][Engine.ANSWER] = Integer.toString(findGCD(firstNumber, secondNumber));
         }
 
-        Engine.gameMechanics(qaArray, rules);
+        Engine.gameMechanics(questionsAndAnswers, rules);
     }
 
     public static int findGCD(int a, int b) {

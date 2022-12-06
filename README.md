@@ -1,3 +1,10 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/xushaha/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/xushaha/java-project-61/actions)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/179ef48684f559c34eda/maintainability)](https://codeclimate.com/github/xushaha/java-project-61/maintainability)
+
+
+
 This project is a set of five console games:
 
 
@@ -31,8 +38,3 @@ Game Prime Number. The player must determine if the number is prime.
 [![asciicast](https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX.svg)](https://asciinema.org/a/UTaTukt0Ccu5bQu2jDjLlhbXX)
 
 
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/xushaha/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/xushaha/java-project-61/actions)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/179ef48684f559c34eda/maintainability)](https://codeclimate.com/github/xushaha/java-project-61/maintainability)

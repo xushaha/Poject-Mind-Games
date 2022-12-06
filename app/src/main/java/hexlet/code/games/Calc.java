@@ -10,9 +10,9 @@ public class Calc {
     public static void startGame() {
 
         String rules = "What is the result of the expression?";
-        String[][] qaArray = new String[Utils.MAX_CYCLES][Utils.MAX_CYCLES];
+        String[][] questionsAndAnswers = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
-        for (int i = 0; i < Utils.MAX_CYCLES; i++) {
+        for (int i = 0; i < Engine.MAX_CYCLES; i++) {
             int firstMember = Utils.getRandomNumber();
             int secondMember = Utils.getRandomNumber();
             String operator = OPERATOR[Utils.getRandomNumber(OPERATOR.length)];
@@ -24,10 +24,10 @@ public class Calc {
                 default -> "Invalid data";
             };
 
-            qaArray[i][Utils.QUESTION] = firstMember + " " + operator + " " + secondMember;
-            qaArray[i][Utils.ANSWER] = correctAnswer;
+            questionsAndAnswers[i][Engine.QUESTION] = firstMember + " " + operator + " " + secondMember;
+            questionsAndAnswers[i][Engine.ANSWER] = correctAnswer;
         }
-        Engine.gameMechanics(qaArray, rules);
+        Engine.gameMechanics(questionsAndAnswers, rules);
     }
 
 }

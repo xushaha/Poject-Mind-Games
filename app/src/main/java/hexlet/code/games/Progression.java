@@ -26,9 +26,9 @@ public class Progression {
 
     public static void startGame() {
         String rules = "What number is missing in the progression?";
-        String[][] qaArray = new String[Utils.MAX_CYCLES][Utils.MAX_CYCLES];
+        String[][] questionsAndAnswers = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
-        for (int i = 0; i < Utils.MAX_CYCLES; i++) {
+        for (int i = 0; i < Engine.MAX_CYCLES; i++) {
 
             final int progLength = Utils.getRandomNumber(MIN_PROGR_LENGTH, MAX_PROGR_LENGTH);
             final int progDiff = Utils.getRandomNumber(MIN_PROGR_DIFF, MAX_PROGR_DIFF);
@@ -48,11 +48,11 @@ public class Progression {
                 }
             }
 
-            qaArray[i][Utils.QUESTION] = String.valueOf(question);
-            qaArray[i][Utils.ANSWER] = Integer.toString(progression[secretNumberPos]);
+            questionsAndAnswers[i][Engine.QUESTION] = String.valueOf(question);
+            questionsAndAnswers[i][Engine.ANSWER] = Integer.toString(progression[secretNumberPos]);
 
         }
-        Engine.gameMechanics(qaArray, rules);
+        Engine.gameMechanics(questionsAndAnswers, rules);
     }
 
 }

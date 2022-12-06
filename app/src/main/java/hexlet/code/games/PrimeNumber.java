@@ -6,15 +6,15 @@ public class PrimeNumber {
 
     public static void startGame() {
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] qaArray = new String[Utils.MAX_CYCLES][Utils.MAX_CYCLES];
+        String[][] questionsAndAnswers = new String[Engine.MAX_CYCLES][Engine.MAX_CYCLES];
 
-        for (int i = 0; i < Utils.MAX_CYCLES; i++) {
+        for (int i = 0; i < Engine.MAX_CYCLES; i++) {
             int randNumb = Utils.getRandomNumber();
 
-            qaArray[i][Utils.QUESTION] = Integer.toString(randNumb);
-            qaArray[i][Utils.ANSWER] = (isPrimeNumber(randNumb)) ? "yes" : "no";
+            questionsAndAnswers[i][Engine.QUESTION] = Integer.toString(randNumb);
+            questionsAndAnswers[i][Engine.ANSWER] = (isPrimeNumber(randNumb)) ? "yes" : "no";
         }
-        Engine.gameMechanics(qaArray, rules);
+        Engine.gameMechanics(questionsAndAnswers, rules);
     }
 
     public static boolean isPrimeNumber(int a) {
